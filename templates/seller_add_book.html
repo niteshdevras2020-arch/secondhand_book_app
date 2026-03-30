@@ -1,0 +1,32 @@
+{% extends "base_premium.html" %}
+
+{% block page_title %}Add Book{% endblock %}
+
+
+{% block content %}
+<div class="cardx" style="max-width:500px">
+  <form action="/seller_add_book" method="POST">
+    
+    <div class="mb-3">
+      <label>Title</label>
+      <input type="text" name="title" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Author</label>
+      <input type="text" name="author" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Price</label>
+      <input type="number" name="price" class="form-control">
+    </div>
+
+    <button class="btn btn-dark">Add Book</button>
+  </form>
+
+  <br>
+  
+  <a href="/seller_dashboard" class="btn btn-outline-light">← Back to Dashboard</a>
+</div>
+{% endblock %}

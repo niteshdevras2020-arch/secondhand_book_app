@@ -1,0 +1,36 @@
+{% extends "base_premium.html" %}
+
+{% block page_title %}All Books{% endblock %}
+
+
+
+{% block content %}
+<div class="cardx">
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+
+    {% for book in books %}
+    <tr>
+      <td>{{ book[0] }}</td>
+      <td>{{ book[1] }}</td>
+      <td>{{ book[2] }}</td>
+      <td>{{ book[3] }}</td>
+      <td>
+        
+        <a href="/admin/delete_book/{{ book[0] }}" class="btn btn-sm btn-danger">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <br>
+  
+  <a href="/dashboard" class="btn btn-outline-light">← Back to Dashboard</a>
+</div>
+{% endblock %}

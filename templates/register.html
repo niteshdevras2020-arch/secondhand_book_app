@@ -1,0 +1,38 @@
+{% extends "base_premium.html" %}
+
+{% block page_title %}Register{% endblock %}
+
+{% block content %}
+<div class="cardx" style="max-width:520px">
+  <form action="/register" method="POST">
+    <div class="mb-3">
+      <label>Name</label>
+      <input type="text" name="name" class="form-control" required>  
+    </div>
+
+    <div class="mb-3">
+      <label>Email</label>
+      <input type="email" name="email" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label>Password</label>
+      <input type="password" name="password" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label>Role</label>
+      <select name="role" class="form-select" required>
+        <option value="user">User</option>
+        <option value="seller">Seller</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+
+    <button class="btn btn-dark w-100">Register</button>
+  </form>
+
+  <br>
+  <a href="/">Back to Login</a>
+</div>
+{% endblock %}

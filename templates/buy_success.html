@@ -1,0 +1,20 @@
+{% extends "base_premium.html" %}
+
+{% block page_title %}Order Successful{% endblock %}
+
+{% block sidebar %}
+<a href="/user_dashboard">Dashboard</a><br><br>
+<a href="/books">Browse Books</a><br><br>
+<a href="/orders">My Orders</a><br><br>
+<a href="/logout">Logout</a>
+{% endblock %}
+
+{% block content %}
+<div class="cardx" style="max-width:600px">
+  <h4>✅ Order Placed Successfully!</h4>
+  <p>Your book order has been placed.</p>
+
+  <a href="/books" class="btn btn-dark">Back to Books</a>
+  <a href="/orders" class="btn btn-outline-dark ms-2">View Orders</a>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base_premium.html" %}
+
+{% block page_title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="cardx" style="max-width:600px">
+
+  <h5 class="mb-3">Select Login Type</h5>
+
+  <div class="d-grid gap-2">
+
+    <a href="/login/admin" class="btn btn-dark">🔐 Admin Login</a>
+    <a href="/login/seller" class="btn btn-primary">🛍 Seller Login</a>
+    <a href="/login/user" class="btn btn-success">👤 User Login</a>
+
+  </div>
+
+</div>
+
+{% endblock %}

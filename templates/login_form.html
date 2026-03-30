@@ -1,0 +1,28 @@
+{% extends "base_premium.html" %}
+
+{% block page_title %}{{ role|capitalize }} Login{% endblock %}
+
+{% block content %}
+<div class="cardx" style="max-width:500px">
+
+  <h5>{{ role|capitalize }} Login</h5>
+
+  <form method="POST">
+
+    <div class="mb-3">
+      <label>Email</label>
+      <input type="email" name="email" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label>Password</label>
+      <input type="password" name="password" class="form-control" required>
+    </div>
+
+    <button class="btn btn-dark w-100">Login</button>
+    <br>
+    <a href="/login">← Back to Login Types</a>
+  </form>
+
+</div>
+{% endblock %}

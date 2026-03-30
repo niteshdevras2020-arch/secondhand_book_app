@@ -1,0 +1,26 @@
+{% extends "base_premium.html" %}
+
+{% block page_title %}Enter Delivery Details{% endblock %}
+
+{% block content %}
+<div class="cardx" style="max-width:600px; padding:20px;">
+
+  <h5>Enter Delivery Details</h5>
+  <p>Please provide your address and phone number.</p>
+
+  <form method="POST">
+    <div class="mb-3">
+      <label>Delivery Address</label>
+      <textarea name="address" class="form-control" rows="4" required placeholder="Enter your full address"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label>Phone Number</label>
+     <input type="text" name="phone" class="form-control" required pattern="[0-9]{10}" placeholder="Enter 10-digit phone number">
+    </div>
+
+    <button type="submit" class="btn btn-dark">Place Order</button>
+  </form>
+
+</div>
+{% endblock %}
