@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, session, flash
 import pymysql
 import os
+from urllib.parse import urlparse
 
 app = Flask(__name__)
 app.secret_key = "secondhand_book_app_secret_123"
