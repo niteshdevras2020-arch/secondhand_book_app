@@ -5,13 +5,25 @@ import os
 app = Flask(__name__)
 app.secret_key = "secondhand_book_app_secret_123"
 
-db = pymysql.connect(
-    host=os.environ.get("DB_HOST", "localhost"),
-    user=os.environ.get("DB_USER", "root"),
-    password=os.environ.get("DB_PASSWORD", ""),
-    database=os.environ.get("DB_NAME", "secondhand_books"),
-    port=int(os.environ.get("DB_PORT", 3306))
-)
+
+database_url = os.environ.get("DATABASE_URL")
+
+if database_url:
+    url = urlparse(database_url)
+    db = pymysql.connect(
+        host=url.hostname,
+        user=url.username,
+        password=url.password,
+        database=url.path.lstrip('/'),
+        port=url.port
+    )
+else:
+    db = pymysql.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="secondhand_books"
+    )
 
 cursor = db.cursor()
 
